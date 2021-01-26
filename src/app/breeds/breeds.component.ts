@@ -31,13 +31,11 @@ export class BreedsComponent implements OnInit {
       map((mapBreeds: Breed[]) => mapBreeds.map(b => ({ breed: b, state: false } as BreedView)))
     )
     .subscribe(breedsView =>  {
-      console.log(breedsView);
         this.breeds = breedsView;
     });
   } 
 
   onBreedSelect(breed: BreedView): void {
-    console.log(breed)
     this.breeds.forEach(b =>
       b === breed ? (b.state = !b.state) : (b.state = false)
     );
