@@ -1,0 +1,5 @@
+mat-card>:not(mat-card-content) img, mat-card>img {
+    height: 100% !important;
+}
+
+masonry-item { width: 200px; }

@@ -8,12 +8,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatChipsModule } from '@angular/material/chips';
 import {MatInputModule} from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ImagesGalleryComponent } from './images-gallery/images-gallery.component';
+import { MatCardModule} from '@angular/material/card';   
+import { NgxMasonryModule } from 'ngx-masonry';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    BreedsComponent
+    BreedsComponent,
+    ImagesGalleryComponent
   ],
   imports: [
     FlexLayoutModule,
@@ -21,7 +25,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     MatChipsModule,
     MatInputModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxMasonryModule
   ],
   providers: [],
   bootstrap: [AppComponent]
