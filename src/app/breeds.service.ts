@@ -9,7 +9,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class BreedsService {
 
-  private breedsUrl = 'http://localhost:9090/breeds';
+  private breedsUrl = 'breeds';
 
   constructor(private httpClient: HttpClient) { }
 

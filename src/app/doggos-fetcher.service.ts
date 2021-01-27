@@ -9,7 +9,8 @@ import { Doggo } from './images-gallery/doggo';
 })
 export class DoggosFetcherService {
 
-  private doggosUrl = 'http://localhost:9090/';
+  // the root
+  private doggosUrl = '';
 
   constructor(private httpClient: HttpClient) { }
 
