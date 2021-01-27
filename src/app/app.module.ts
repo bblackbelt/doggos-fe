@@ -10,7 +10,7 @@ import {MatInputModule} from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ImagesGalleryComponent } from './images-gallery/images-gallery.component';
 import { MatGridListModule } from '@angular/material/grid-list';
-
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatChipsModule,
     MatInputModule,
     BrowserAnimationsModule,
-    MatGridListModule
+    MatGridListModule,
+    LazyLoadImageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
