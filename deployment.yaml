@@ -1,14 +1,20 @@
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: doggo-fe
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      deployment: doggo-fe
   template:
+    metadata:
+      labels:
+        deployment: doggo-fe
     spec:
       containers:
         - name: doggo-fe
-          image: image
+          image: gcr.io/PROJECT_ID/IMAGE:TAG
           imagePullPolicy: Always
           ports:
             - containerPort: 80
