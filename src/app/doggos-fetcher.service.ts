@@ -10,7 +10,7 @@ import { Doggo } from './images-gallery/doggo';
 })
 export class DoggosFetcherService {
 
-  private doggosUrl = "http://localhost:9090/"
+  private doggosUrl = "http://35.223.140.47/"
 
   constructor(private httpClient: HttpClient) { }
 
@@ -36,5 +36,3 @@ export class DoggosFetcherService {
     };
   }
 }
-
-
