@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: doggo-fe-loadbalancer
+spec:
+  type: LoadBalancer
+  ports:
+    - name: doggo-fe-port
+      port: 80
+      protocol: TCP
+  selector:
+    deployment: doggo-fe
