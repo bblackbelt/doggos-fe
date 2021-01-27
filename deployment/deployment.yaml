@@ -1,0 +1,14 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: doggo-fe
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+        - name: doggo-fe
+          image: image
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
