@@ -9,7 +9,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import {MatInputModule} from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ImagesGalleryComponent } from './images-gallery/images-gallery.component';
-import { MatGridListModule } from '@angular/material/grid-list'; 
+import { MatGridListModule } from '@angular/material/grid-list';
 
 
 @NgModule({

@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Breed } from '../breeds/Breed';
 import { Doggo } from './doggo';
 import { DoggosFetcherService } from '../doggos-fetcher.service';
-import { map } from 'rxjs/operators'
-import { from } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { switchMap } from 'rxjs/operators';
+import { DataService } from '../data.service';
 
 export interface DoggoView {
   row: number;
@@ -18,36 +19,20 @@ export interface DoggoView {
 })
 export class ImagesGalleryComponent implements OnInit {
 
-  doggoImages: DoggoView[];
+  doggoImages: Doggo[];
 
-  constructor(private doggoService: DoggosFetcherService) { }
+  constructor(private doggoService: DoggosFetcherService, private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.fetchDoggos(1, 24, null);
+    this.fetchDoggos();
+    this.dataService.onBreedChanged(null);
   }
 
-  fetchDoggos(page: number, pageSize: number, breedId?: number) {
-    this.doggoService.getDoggos(page, pageSize, breedId)
-      .pipe (
-        map(doggos => this.dataPartion(doggos))
+  private fetchDoggos(): void {
+    this.dataService.onBreedChanges()
+      .pipe(
+        switchMap((breedId: number) => this.doggoService.getDoggos(1, 24, breedId))
       )
-      .subscribe(urls => this.doggoImages = urls)
-  }
-
-  dataPartion (input: Doggo[]): DoggoView[] {
-    var newArr: DoggoView[] = [];
-    for (var i = 0; i < input.length; i++) {
-        var col = 1 + Math.round(Math.random()*1)
-        var row: number
-        if (col > 1) row = 1 + Math.round(Math.random()*3)
-        else row =1
-        newArr.push(({ 
-          row, 
-          col, 
-          url: input[i].url 
-        } as DoggoView))
-    }
-    console.log(newArr)
-    return newArr;
+      .subscribe(urls => this.doggoImages = urls);
   }
 }
