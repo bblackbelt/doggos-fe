@@ -9,8 +9,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import {MatInputModule} from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ImagesGalleryComponent } from './images-gallery/images-gallery.component';
-import { MatCardModule} from '@angular/material/card';   
-import { NgxMasonryModule } from 'ngx-masonry';
+import { MatGridListModule } from '@angular/material/grid-list'; 
 
 
 @NgModule({
@@ -26,7 +25,7 @@ import { NgxMasonryModule } from 'ngx-masonry';
     MatChipsModule,
     MatInputModule,
     BrowserAnimationsModule,
-    NgxMasonryModule
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
