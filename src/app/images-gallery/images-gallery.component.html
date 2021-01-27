@@ -1,7 +1,9 @@
-<mat-grid-list cols="4" rowHeight="150px">
-    <mat-grid-tile  *ngFor="let doggo of doggoImages"
-        [rowspan]="doggo.row"
-        [colspan]="doggo.col" style="background-color: royalblue;">
-        <img [src]="doggo.url" style="object-fit: cover; width: 100%; height: 100%;"/>
-    </mat-grid-tile>
-</mat-grid-list>
+
+
+<ul>
+    <li *ngFor="let doggo of doggoImages">
+        <mat-card>
+            <img mat-card-image [src]="doggo.url"/>
+        </mat-card>
+    </li>
+</ul>
