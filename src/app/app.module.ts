@@ -31,7 +31,7 @@ import { APIInterceptor } from './apiinterceptor';
     LazyLoadImageModule
   ],
   providers: [
-    { provide: "BASE_API_URL", useValue: environment.apiUrl },
+    { provide: 'BASE_API_URL', useValue: environment.apiUrl },
     { provide: HTTP_INTERCEPTORS, useClass: APIInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]

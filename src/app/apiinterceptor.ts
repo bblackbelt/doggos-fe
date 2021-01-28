@@ -6,10 +6,10 @@ import { Observable } from 'rxjs';
 export class APIInterceptor implements HttpInterceptor {
 
     constructor(@Inject('BASE_API_URL') private baseUrl: string) {}
-            
+
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        console.log(`${this.baseUrl}/${req.url}`)
-    const apiReq = req.clone({ url: `${this.baseUrl}/${req.url}` });
+        console.log(`${this.baseUrl}/${req.url}`);
+        const apiReq = req.clone({ url: `${this.baseUrl}/${req.url}` });
         return next.handle(apiReq);
     }
 }
