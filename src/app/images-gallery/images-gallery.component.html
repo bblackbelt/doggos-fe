@@ -3,7 +3,7 @@
 <ul>
     <li *ngFor="let doggo of doggoImages">
         <mat-card>
-            <img mat-card-image [src]="doggo.url"/>
+            <img mat-card-image [lazyLoad]="doggo.url" />
         </mat-card>
     </li>
 </ul>
