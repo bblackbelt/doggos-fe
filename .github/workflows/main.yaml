@@ -42,10 +42,5 @@ jobs:
       - name: Test
         run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
 
-<<<<<<< HEAD
-       # - name: E2E
-       # run: npm run e2e -- --configuration=ci
-=======
-      - name: E2E
-        run: npm run e2e -- --protractor-config=e2e/protractor-ci.conf.js
->>>>>>> 59b6e63 (ci: skip tests and change test command)
+      # - name: E2E
+      #  run: npm run e2e -- --configuration=ci
