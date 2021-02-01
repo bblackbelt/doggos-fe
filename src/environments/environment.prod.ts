@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://34.67.140.141'
+  apiUrl: 'https://eerbalibera-eval-test.apigee.net/doggos-api-test'
 };
