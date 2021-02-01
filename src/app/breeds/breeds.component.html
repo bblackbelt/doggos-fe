@@ -1,0 +1,12 @@
+<div class="mat-app-background basic-container">
+      <mat-chip-list #chipList>
+        <mat-chip
+          #chip="matChip"
+          *ngFor="let breed of breeds"
+          [selectable]="true"
+          (click)="onBreedSelect(breed)"
+          [selected]="breed.state">
+          {{breed.breed.name}}
+        </mat-chip>
+      </mat-chip-list>
+  </div>
